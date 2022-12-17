@@ -1,7 +1,8 @@
-const { DataTypes } = require("sequelize");
-const db = require("../utils/database");
-const Conversations = require("./conversations.models");
-const Users = require("./users.models");
+const { DataTypes } = require('sequelize')
+const db = require('../utils/database')
+
+const Conversations = require('./conversations.models')
+const Users = require('./users.models')
 
 const Messages = db.define('messages', {
   id: {
@@ -24,7 +25,7 @@ const Messages = db.define('messages', {
       model: Conversations
     }
   },
-  messages: {
+  message: {
     type: DataTypes.TEXT,
     allowNull: false
   }
