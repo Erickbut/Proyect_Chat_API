@@ -11,7 +11,6 @@ const getAllConversations = (req, res) => {
 }
 
 const getConversationById = (req, res) => {
-
   const id = req.params.conversation_id
   conversationController.findConversationById(id)
     .then(data => {
@@ -60,7 +59,7 @@ const patchConversation = (req, res) => {
     })
 }
 
-const deleteConvesation = (req, res) => {
+const deleteConversation = (req, res) => {
   const id = req.params.conversation_id
   conversationController.removeConversation(id)
     .then(data => {
@@ -80,5 +79,5 @@ module.exports = {
   postConversation,
   getConversationById,
   patchConversation,
-  deleteConvesation
+  deleteConversation
 }
