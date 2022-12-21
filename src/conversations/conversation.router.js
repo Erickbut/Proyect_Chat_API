@@ -18,7 +18,7 @@ router.route('/:conversation_id/messages')
   .post(passportJWT.authenticate('jwt', { session: false }), participantValidate, messageServices.postMessage)
   .get(passportJWT.authenticate('jwt', { session: false }), participantValidate, messageServices.getAllMessages)
 
-router.route('/conversations/:conversation_id/messages/:message_id')
+router.route('/:message_id/messages')
   .get(passportJWT.authenticate('jwt', { session: false }), participantValidate, messageServices.getMessagesById)
   .delete(passportJWT.authenticate('jwt', { session: false }),participantValidate, messageServices.deleteMessage)
 
