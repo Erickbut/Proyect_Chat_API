@@ -29,12 +29,6 @@ const findMessagesById = async (id) => {
     const data = await Messages.findOne({
         where: {
             id: id
-        },
-        include: {
-            model: Participants,
-            include: {
-                model: Users
-            }
         }
     })
     return data
